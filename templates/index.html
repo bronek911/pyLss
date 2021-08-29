@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>About Flask</title>
+  </head>
+  <body>
+    <h1> Message </h1>
+    <p>{{ string }}</p>
+    <a href=# id=test><button class='btn btn-default'>Test</button></a>
+  </body>
+</html>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type=text/javascript>
+        $(function() {
+          $('a#test').on('click', function(e) {
+            e.preventDefault()
+            $.getJSON('/move/100',
+                function(data) {
+                  $.getJSON('/reset', function(data) { //do nothing });
+                });
+            return false;
+          });
+        });
+</script>
